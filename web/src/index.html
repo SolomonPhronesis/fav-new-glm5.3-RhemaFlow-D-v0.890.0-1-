@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RhemaFlow Web: live Scripture on your screen</title><meta name="description" content="Free demo: RhemaFlow listens to a sermon, finds the Bible verse and shows it for your review. Try the sample sermon, no microphone needed.">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0d1017"><link rel="icon" type="image/png" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="RhemaFlow">
+<style>/*CSS*/</style></head>
+<body>
+<div id="top">
+  <h1>RhemaFlow Web</h1><span class="chip" id="chipState">IDLE</span><span class="chip rec" id="chipRec" hidden>REC</span><span id="clock">00:00</span><span class="cmdflash" id="cmdflash"></span>
+  <button id="btnStart" class="go">&#9654; Start service</button><button id="btnSample" title="No microphone needed: watch a pretend sermon being followed">&#9654; Try a sample sermon</button>
+  <label class="muted small">language <select id="lang"><option value="en-US">English (US)</option><option value="en-GB">English (UK)</option><option value="en-NG">English (Nigeria)</option><option value="en-ZA">English (South Africa)</option><option value="en-AU">English (Australia)</option><option value="en-IN">English (India)</option></select></label>
+  <button id="btnSettings">Service details&hellip;</button><button id="btnVersions">Bible versions&hellip;</button><button id="btnHelp">Help</button><button id="btnInstall" hidden title="Put RhemaFlow on this computer or phone like an app">Install app</button>
+  <span class="muted small" id="engineNote"></span>
+</div>
+<div id="main">
+  <aside id="left"><h3>TRANSCRIPT</h3><div id="lines"><span class="muted">Start a service to see the live transcript.</span></div><div id="interim"></div></aside>
+  <section id="center">
+    <div class="stagebox"><div class="stage classic" id="prev"><div class="box"><div class="txt"></div><div class="ref"></div></div><div class="media"></div></div></div>
+    <div class="bar">
+      <button id="bPrevV">&#9664; verse</button><button id="bNextV">verse &#9654;</button><button id="bPrevC">&#9664; chap</button><button id="bNextC">chap &#9654;</button>
+      <button id="bStage">Open stage</button><button id="bScreen2" title="Open the stage on your second screen (needs a one-time browser permission)">Screen 2</button><button id="bBlack">Blackout</button><button id="bClear">Clear</button>
+      <button id="bColours" title="Background and text colours">&#127912; Colours</button><select id="style" title="Stage look"><option value="classic">Classic</option><option value="lower">Lower third</option><option value="chroma">Green screen</option><option value="large">Large print</option></select>
+      <select id="trans" title="Bible version"></select>
+    </div>
+    <div class="bar">
+      <button id="bRead">&#128266; Read</button><button id="bStop" disabled>&#9632; Stop</button><label><input type="checkbox" id="autoRead"> auto-read</label>
+      <span class="muted small">zoom</span><button id="zOut" title="Smaller">A&minus;</button><input type="range" id="zoom" min="60" max="400" value="100"><button id="zIn" title="Bigger">A+</button>
+      <select id="zpre" title="Zoom presets"><option value="">zoom&hellip;</option><option>100</option><option>150</option><option>200</option><option>250</option><option>300</option><option>350</option><option>400</option></select><span class="muted small" id="zpct">100%</span>
+      <button id="bPlan">Plan</button><button id="bHistory">History</button><button id="bMedia">Media</button><button id="bSlides">Slides</button><button id="bBrowser">Hide scripture</button><button id="bCmds">Commands</button>
+    </div>
+    <div class="strip" id="heard"><span class="muted small">HEARD</span> <span id="heardTxt" class="muted">nothing yet</span></div>
+    <div class="muted small" id="sttNote"></div>
+  </section>
+  <aside id="right"><h3>NEEDS YOUR REVIEW</h3>
+    <div class="bar" style="margin-bottom:6px"><label><input type="checkbox" id="autoApprove"> auto-approve quotes</label><label><input type="checkbox" id="showAll" checked> show all matches</label></div>
+    <div id="cards"><div class="muted">Nothing needs review.<br>Clear detections are staged automatically.</div></div>
+  </aside>
+</div>
+<div id="browser">
+  <div id="brtop"><span class="muted small">SCRIPTURE</span><input type="text" id="q" placeholder='search: book, John 3:16, or words like "god so loved"   ( / )' autocomplete="off"><button id="qx">&#10005;</button><span class="muted small" id="brnote">follows what is on stage &middot; click a verse to show it &middot; Shift+click for a range</span></div>
+  <div id="recent"></div>
+  <div id="cols"><div id="books"></div><div id="chaps"></div><div id="verses"></div></div>
+  <div id="results" hidden style="flex:1;overflow:auto"></div>
+</div>
+<div id="brbar" hidden><button id="brshow" class="gold">&#9650; Show scripture</button><button id="brhist" class="small">History</button><span class="muted small">press / to search</span></div>
+<div id="toast"></div>
+<div id="stageonly" hidden><div class="stage classic" id="stg"><div class="box"><div class="txt"></div><div class="ref"></div></div><div class="media"></div></div><div id="fshint">Click here or press F for full screen on THIS screen &middot; Esc to leave</div></div>
+
+<dialog id="dlgSettings"><h2>Service details</h2>
+  <div class="row"><label>title <input type="text" id="title" placeholder="e.g. Faith that moves" size="30"></label></div>
+  <div class="row"><label>church <input type="text" id="church" size="30"></label></div>
+  <div class="row"><label><input type="checkbox" id="saveSrt" checked> .srt captions</label><label><input type="checkbox" id="saveMd" checked> sermon notes (.md)</label><label><input type="checkbox" id="saveRec" checked> record audio</label></div>
+  <p class="muted small">Files are named like <b>Sunday 4th October 2026 - 01h27m43s to 02h15m10s - transcript.txt</b>. The browser saves them to your Downloads folder.</p>
+  <div class="row"><button id="recover" hidden>Recover last service</button><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgVersions"><h2>Bible versions</h2>
+  <p class="muted small">KJV is built in. Matching always uses KJV wording (what preachers quote); the verse is SHOWN in the version you choose.</p>
+  <div id="installed"></div>
+  <h3 style="margin-top:10px">INSTALL (public domain)</h3><div class="row"><button id="bInstallBundled" class="go">Install all from the bibles folder</button><span class="muted small">no internet needed when this page is served from the web folder</span></div><div id="pdlist" class="row"></div>
+  <h3 style="margin-top:10px">YOUR OWN FILE</h3>
+  <p class="muted small">Any complete 66-book file: .json (3 common layouts) or .tsv/.txt (Book&lt;TAB&gt;Chapter&lt;TAB&gt;Verse&lt;TAB&gt;Text). The file name becomes the menu name. Licensed versions (NIV, ESV&hellip;) need your own licence: get the text with <code>tools/fetch_bible.py</code>, then add the file here.</p>
+  <div class="row"><input type="file" id="bibleFile" accept=".json,.tsv,.txt" multiple></div><div id="vmsg" class="small"></div>
+  <div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgPlan"><h2>Sermon plan</h2>
+  <p class="muted small">Paste the sermon notes. Every scripture reference is found, in order. Space (or Next) puts the next one on the stage.</p>
+  <textarea id="planText" rows="5" style="width:100%" placeholder="e.g. Open with John 3:16-18, then Romans 8:28, close with Psalm 23"></textarea>
+  <div class="row"><button id="planFind">Find scriptures</button><button id="planNext" class="go">Next &#9654;</button><button id="planReset">Start over</button><button id="planClear">Clear</button></div>
+  <div id="planList"></div><div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgSaved"><h2>Service saved</h2><p class="muted small" id="savedNote"></p><div id="savedLinks"></div>
+  <div class="row"><button id="dlAll" class="go">Download all</button><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgColours"><h2>Stage colours</h2>
+  <div id="presets" class="row"></div>
+  <div class="row"><label>background <input type="color" id="cBg" value="#000000"></label><label>text <input type="color" id="cFg" value="#ffffff"></label><span class="muted small">changing the background picks readable text for you</span></div>
+  <div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgHistory"><h2>Scripture history</h2>
+  <p class="muted small">Everything shown so far, newest first. Say &ldquo;previous scripture&rdquo; to step back, &ldquo;next scripture&rdquo; to step forward. Keys: [ and ]</p>
+  <div class="row"><button id="hBack">&#9664; Back</button><button id="hFwd">Forward &#9654;</button><span id="hPos" class="muted small"></span></div>
+  <div id="hList" style="max-height:50vh;overflow:auto"></div><div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgMedia"><h2>Pictures and videos</h2>
+  <p class="muted small">Pick files from your computer. Click one to show it on the stage. Pictures and videos stay in this browser tab (nothing is uploaded).</p>
+  <div class="row"><input type="file" id="mediaFile" accept="image/*,video/*" multiple></div>
+  <div id="mediaList"></div>
+  <div class="row"><button id="mPlay">&#9654; Play</button><button id="mPause">&#10074;&#10074; Pause</button><button id="mRestart">&#8634; Restart</button><label><input type="checkbox" id="mMute"> mute</label><label><input type="checkbox" id="mLoop"> loop</label></div>
+  <div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgSlides"><h2>Slides: announcements, lyrics, countdown</h2>
+  <p class="muted small">Blank line = next slide. A first line ending in a colon (&ldquo;Chorus:&rdquo;) is a label. Then use the arrow keys or &ldquo;next&rdquo; to step.</p>
+  <textarea id="slidesText" rows="7" style="width:100%" placeholder="Welcome to church&#10;&#10;Chorus:&#10;Amazing grace, how sweet the sound&#10;&#10;Announcements"></textarea>
+  <div class="row"><button id="slidesMake" class="go">Make slides</button><button id="slidesPrev">&#9664; Prev</button><button id="slidesNext">Next &#9654;</button></div>
+  <div id="slidesList"></div>
+  <h3 style="margin-top:10px">COUNTDOWN</h3>
+  <div class="row"><input type="text" id="cdTitle" value="Service starts in" size="22"><input type="number" id="cdMin" value="5" min="1" max="120" style="width:5em"> min <button id="cdStart" class="go">Start</button><button id="cdStop">Stop</button></div>
+  <div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgCmds"><h2>Voice commands</h2>
+  <div class="row"><input type="text" id="cmdq" placeholder="search, e.g. zoom, stage, next" size="28"></div>
+  <p class="muted small">Say any of these. Short phrases only work in short sentences so normal preaching never triggers them. A scripture reference in the same sentence wins over navigation. Close variants and run-together words ("netverse") are understood.</p>
+  <div id="cmdlist"></div><div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<dialog id="dlgHelp"><h2>Help</h2>
+<p><b>Keys</b> (when not typing): <b>Space</b> approve first card / next in plan &middot; <b>X</b> dismiss &middot; <b>1-5</b> pick option &middot; <b>&larr; &rarr;</b> or P/N verse &middot; <b>&uarr; &darr;</b> chapter &middot; <b>B</b> blackout &middot; <b>C</b> clear &middot; <b>R</b> read aloud &middot; <b>S</b> stop reading &middot; <b>F</b> stage window &middot; <b>/</b> search &middot; <b>H</b> help.</p>
+<p><b>Voice</b> (say it naturally): "John chapter 3 verse 16", "next verse", "previous chapter", "zoom 300", "max zoom", "half max zoom", "blackout", "clear the screen", "approve it", "option two", "read it", "stop reading", "open stage", "close stage", "auto approve on".</p>
+<p class="muted small"><b>Browser limits (honest):</b> speech recognition uses the browser's own service (Chrome/Edge send audio to the vendor's servers; Safari 14.1+ works, Firefox has none). Browsers only allow full screen and opening a window after a click, so "full screen" and "open stage" by voice may be refused: click once in the stage window and press F. "Exit full screen" by voice works. For a fully offline, more accurate setup use the desktop app.</p>
+<div class="row"><button onclick="this.closest('dialog').close()">Close</button></div></dialog>
+<script>/*CORE*/</script>
+<script>const __KJV_B64__="/*KJV*/";</script>
+<script>/*APP*/</script>
+</body></html>

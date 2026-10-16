@@ -1,0 +1,56 @@
+{
+ "schema": 1,
+ "language": "H",
+ "source": "OpenScriptures Hebrew Lexicon, Strong's numbers (github.com/openscriptures/HebrewLexicon), from James Strong's 1890 concordance",
+ "license": "see github.com/openscriptures/HebrewLexicon (not confirmed by the RhemaFlow author)",
+ "entries": {
+  "H1": {
+   "l": "אָב",
+   "t": "ʼâb",
+   "p": "awb",
+   "v": "a primitive word",
+   "d": "father, in a literal and immediate, or figurative and remote application",
+   "k": "chief, (fore-) father(-less), × patrimony, principal. Compare names in 'Abi-'"
+  },
+  "H430": {
+   "l": "אֱלֹהִים",
+   "t": "ʼĕlôhîym",
+   "p": "el-o-heem'",
+   "v": "plural of H433",
+   "d": "gods in the ordinary sense; but specifically used (in the plural thus, especially with the article) of the supreme God; occasionally applied by way of deference to magistrates; and sometimes as a superlative",
+   "k": "angels, × exceeding, God (gods) (-dess, -ly), × (very) great, judges, × mighty"
+  },
+  "H7965": {
+   "l": "שָׁלוֹם",
+   "t": "shâlôwm",
+   "p": "shaw-lome'",
+   "v": "or שָׁלֹם; from H7999",
+   "d": "safe, i.e. (figuratively) well, happy, friendly; also (abstractly) welfare, i.e. health, prosperity, peace",
+   "k": "× do, familiar, × fare, favour, friend, × great, (good) health, (× perfect, such as be at) peace(-able, -ably), prosper(-ity, -ous), rest, safe(-ty), salute, welfare, (× all is, be) well, × wholly"
+  },
+  "H3068": {
+   "l": "יְהֹוָה",
+   "t": "Yᵉhôvâh",
+   "p": "yeh-ho-vaw'",
+   "v": "from H1961",
+   "d": "(the) self-Existent or Eternal; Jeho-vah, Jewish national name of God",
+   "k": "Jehovah, the Lord. Compare H3050, H3069"
+  },
+  "H7225": {
+   "l": "רֵאשִׁית",
+   "t": "rêʼshîyth",
+   "p": "ray-sheeth'",
+   "v": "from the same as H7218",
+   "d": "the first, in place, time, order or rank (specifically, a firstfruit)",
+   "k": "beginning, chief(-est), first(-fruits, part, time), principal thing"
+  },
+  "H1697": {
+   "l": "דָּבָר",
+   "t": "dâbâr",
+   "p": "daw-baw'",
+   "v": "from H1696",
+   "d": "a word; by implication, a matter (as spoken of) or thing; adverbially, a cause",
+   "k": "act, advice, affair, answer, × any such (thing), because of, book, business, care, case, cause, certain rate, chronicles, commandment, × commune(-ication), concern(-ing), confer, counsel, dearth, decree, deed, × disease, due, duty, effect, eloquent, errand, (evil favoured-) ness, glory, harm, hurt, iniquity, judgment, language, lying, manner, matter, message, (no) thing, oracle, × ought, × parts, pertaining, please, portion, power, promise, provision, purpose, question, rate, reason, report, request, × (as hast) said, sake, saying, sentence, sign, so, some (uncleanness), somewhat to say, song, speech, × spoken, talk, task, that, × there done, thing (concerning), thought, thus, tidings, what(-soever), wherewith, which, word, work"
+  }
+ }
+}

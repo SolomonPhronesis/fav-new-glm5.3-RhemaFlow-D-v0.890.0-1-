@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/rf-bible",
+    "crates/rf-core",
+    "crates/rf-service",
+    "crates/rf-media",
+    "crates/rf-strongs",
+    "crates/rf-studio",
+    "crates/rf-asr",
+    "crates/rf-app",
+]
+
+[workspace.package]
+version = "0.890.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+hound = "3.5"
+crossbeam-channel = "0.5"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

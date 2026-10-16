@@ -1,0 +1,40 @@
+[package]
+name = "rf-app"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "rhemaflow-d"
+path = "src/main.rs"
+
+[dependencies]
+libc = "0.2"
+rf-bible = { path = "../rf-bible" }
+rf-core = { path = "../rf-core" }
+rf-asr = { path = "../rf-asr" }
+rf-service = { path = "../rf-service" }
+rf-media = { path = "../rf-media" }
+rf-strongs = { path = "../rf-strongs" }
+rf-studio = { path = "../rf-studio" }
+eframe = "=0.28.1"
+egui = "=0.28.1"
+serde = { workspace = true }
+serde_json = { workspace = true }
+crossbeam-channel = { workspace = true }
+hound = { workspace = true }
+anyhow = { workspace = true }
+# QR codes for the giving slide and the handout. MIT or Apache-2.0.
+qrcode = { version = "0.14", default-features = false }
+# Backups are zip files (MIT). Deflate only.
+zip = { version = "0.6", default-features = false, features = ["deflate"] }
+# MIDI controllers (MIT): foot pedals, pad controllers, Stream Deck via MIDI bridges.
+midir = "0.10"
+# Reading the clipboard for the song editors' Paste buttons (MIT or Apache-2.0). egui already
+# brings arboard in through egui-winit, so this adds no new dependency to the build.
+arboard = { version = "3", default-features = false }
+# The real Mac menu bar at the top of the screen (MIT or Apache-2.0). Only built on macOS.
+[target.'cfg(target_os = "macos")'.dependencies]
+muda = { version = "0.15", default-features = false }
+[features]
+# Apple GPU (Metal) for the speech engines. Opt-in: cargo build --release -p rf-app --features metal
+metal = ["rf-asr/metal"]

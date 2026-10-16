@@ -1,0 +1,27 @@
+[package]
+name = "rf-asr"
+version.workspace = true
+edition.workspace = true
+build = "build.rs"
+
+[dependencies]
+tungstenite = { version = "0.24", default-features = false, features = ["handshake"] }
+serde_json = { workspace = true }
+cpal = "=0.15.3"
+crossbeam-channel = { workspace = true }
+hound = { workspace = true }
+anyhow = { workspace = true }
+
+[build-dependencies]
+cc = "1"
+cmake = "0.1"
+
+[features]
+# `native` compiles ONE shared whisper.cpp/ggml build that serves both the
+# Whisper and the NVIDIA Parakeet engines (see build.rs). Without it only the
+# mock engine exists — useful for CI machines with no C++ toolchain.
+default = ["native"]
+native = []
+# Apple GPU (Metal) backend for both engines. Off by default: the CPU path is
+# the one that has been exercised end-to-end; opt in with --features metal.
+metal = ["native"]

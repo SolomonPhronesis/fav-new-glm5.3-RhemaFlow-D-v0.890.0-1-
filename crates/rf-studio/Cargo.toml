@@ -1,0 +1,11 @@
+[package]
+name = "rf-studio"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Studio: the 20 features that let RhemaFlow stand in for a church presentation program (pure logic, no UI, no clock, no files unless a function says so)"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+rf-service = { path = "../rf-service" }

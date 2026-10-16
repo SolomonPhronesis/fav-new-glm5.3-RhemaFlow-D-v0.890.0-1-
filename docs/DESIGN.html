@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RhemaFlow-D v0.801.2 — 5 Design Options &amp; the Recommendation</title>
+<style>
+  :root{
+    --bg:#0E1116; --panel:#161B22; --card:#1C222B; --border:#2A3038;
+    --text:#E6E9EF; --muted:#8B93A1; --gold:#D4A24C; --green:#3FB68B; --red:#E5534B; --blue:#5B9DD9;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font:15px/1.65 -apple-system,"Segoe UI",Roboto,sans-serif;padding:48px 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:30px;letter-spacing:.2px}
+  h1 .v{color:var(--gold)}
+  .tag{color:var(--muted);margin:6px 0 34px}
+  .chosen{border:1px solid var(--gold);background:linear-gradient(180deg,rgba(212,162,76,.09),rgba(212,162,76,.03));border-radius:14px;padding:26px 26px 22px;margin-bottom:26px}
+  .chosen h2{color:var(--gold);font-size:20px;margin-bottom:4px}
+  .chosen .badge{display:inline-block;font-size:11px;letter-spacing:1.4px;color:var(--bg);background:var(--gold);border-radius:4px;padding:2px 8px;margin-left:8px;vertical-align:middle}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:34px}
+  .opt{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .opt h3{font-size:16px;margin-bottom:2px}
+  .opt .sub{color:var(--muted);font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
+  .opt ul{margin:10px 0 0 18px;color:var(--muted);font-size:13.5px}
+  .opt li{margin-bottom:5px}
+  .opt .verdict{margin-top:12px;font-size:13px}
+  .good{color:var(--green)} .bad{color:var(--red)} .mid{color:var(--blue)}
+  .cols{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}
+  @media(max-width:800px){.cols{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .card h2{font-size:17px;margin-bottom:12px;color:var(--gold)}
+  .card p{margin-bottom:10px;color:var(--muted);font-size:13.5px}
+  .card p b{color:var(--text)}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+  th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border)}
+  th{color:var(--muted);font-weight:600;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase}
+  td:first-child{color:var(--text)}
+  .score{color:var(--gold);font-weight:600;white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>RhemaFlow-D <span class="v">v0.801.2</span> — 5 Design Options</h1>
+  <p class="tag">Five UI/UX directions for the operator command centre &amp; congregation stage, evaluated as a senior UI/UX designer would: against a dimmed media booth, a projector, and a 10-second "what's happening?" test.</p>
+
+  <div class="chosen">
+    <h2>Option A — "Cathedral Dark" <span class="badge">SHIPPED IN v0.801</span></h2>
+    <p class="tag" style="margin:8px 0 12px">Near-black blue-grey app, one gold accent reserved for "live / on stage", warm-white serif on pure black for the congregation stage.</p>
+    <ul>
+      <li><b style="color:var(--text)">Operator:</b> three-zone layout — transcript (left), stage preview + scripture index (centre), review queue (right); everything decided in one screen with zero scrolling.</li>
+      <li><b style="color:var(--text)">Stage:</b> auto-fitting serif type, gold reference badge, 350 ms fade-in — reverent on a projector, readable at the back of the room.</li>
+      <li><b style="color:var(--text)">Semantics:</b> gold = live/automation; red = needs you; green = healthy. The eye learns the map in one service.</li>
+    </ul>
+    <p class="verdict"><span class="good">Why it wins:</span> the gold accent carries exactly one meaning (automation is working), so a volunteer operator can trust the room at a glance; dark UI disappears in a dim booth; serif-on-black looks like Scripture, not a dashboard.</p>
+  </div>
+
+  <div class="grid">
+    <div class="opt">
+      <h3>Option B — "Broadcast Console"</h3>
+      <div class="sub">Pro-AV aesthetic · slate greys · dense tiles</div>
+      <ul><li>Everything-as-tiles, VU meters, tiny caps labels, hardware-like knobs for gain and confidence.</li><li>Fits the AV team's muscle memory from mixing desks.</li></ul>
+      <p class="verdict"><span class="bad">Rejected:</span> optimised for engineers, not volunteers; density raises cognitive load during a live service, and it "looks expensive to learn" in front of a church committee.</p>
+    </div>
+    <div class="opt">
+      <h3>Option C — "Chapel Light"</h3>
+      <div class="sub">Bright parchment · navy &amp; white · print-like</div>
+      <ul><li>Light theme, serif everywhere, feels like a bulletin/missal.</li><li>Beautiful for screenshots and very churchy.</li></ul>
+      <p class="verdict"><span class="bad">Rejected:</span> a bright window in a dark booth glares; projectors pair badly with light UI bleed; light themes also invite colourful branding that competes with the verse on screen.</p>
+    </div>
+    <div class="opt">
+      <h3>Option D — "Minimal Auto"</h3>
+      <div class="sub">One button · nothing else · maximum automation</div>
+      <ul><li>A single Start button and a stage window; the operator is told to trust it.</li><li>Maximally simple onboarding.</li></ul>
+      <p class="verdict"><span class="bad">Rejected:</span> violates the PRD's core promise — <i>human control always</i>. When recognition errs once, the operator has no levers, and trust dies mid-service.</p>
+    </div>
+    <div class="opt">
+      <h3>Option E — "Mission Control"</h3>
+      <div class="sub">Timeline-first · graph-heavy · analytics forward</div>
+      <ul><li>Sermon timeline, confidence graphs, event streams as first-class citizens.</li><li>Impressive demos; great for post-service review.</li></ul>
+      <p class="verdict"><span class="mid">Partially adopted:</span> the timeline/index live in the centre panel, but analytics never crowd the live path. Analysis is for after the service, not during it.</p>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <h2>Scoring (weighted for the live-service job)</h2>
+      <table>
+        <tr><th>Criterion (weight)</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+        <tr><td>10-second comprehension (×3)</td><td class="score">9</td><td>6</td><td>7</td><td>10</td><td>5</td></tr>
+        <tr><td>Operator control &amp; override (×3)</td><td class="score">9</td><td>8</td><td>6</td><td>2</td><td>7</td></tr>
+        <tr><td>Dark-room &amp; projector behaviour (×2)</td><td class="score">10</td><td>7</td><td>3</td><td>8</td><td>6</td></tr>
+        <tr><td>Reverence / congregational fit (×1)</td><td class="score">9</td><td>4</td><td>10</td><td>6</td><td>4</td></tr>
+        <tr><td>Volunteer trainability (×1)</td><td class="score">8</td><td>4</td><td>7</td><td>9</td><td>4</td></tr>
+        <tr><td><b>Weighted total</b></td><td class="score">9.2</td><td>6.2</td><td>6.0</td><td>6.5</td><td>5.5</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Feature options shipped with A</h2>
+      <table>
+        <tr><th>Feature option</th><th>Decision</th></tr>
+        <tr><td>Confirm queue for uncertain &amp; quoted Scripture</td><td class="score">Shipped — trust feature #1</td></tr>
+        <tr><td>Honest out-of-range errors with suggestions</td><td class="score">Shipped — anti-wrong-verse</td></tr>
+        <tr><td>Simulator input (typed utterances)</td><td class="score">Shipped — demo can't fail</td></tr>
+        <tr><td>Recording + timestamped Scripture index</td><td class="score">Shipped — post-service value</td></tr>
+        <tr><td>Voice "stop listening"</td><td class="score">Deliberately ignored — operator-only control</td></tr>
+        <tr><td>Sermon archive UI, branding editor</td><td>Deferred to M2 — per PRD roadmap</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

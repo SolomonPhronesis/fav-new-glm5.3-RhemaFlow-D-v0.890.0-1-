@@ -1,0 +1,317 @@
+{
+  "_readme": "Edit this file with YOUR numbers, then run: python3 tools/make_comparison.py . Tags: V = published by the vendor, M = measured by us, E = estimate / not verified.",
+  "published_wer_percent": {
+    "_source": "Confucius4-R2T2 README, English table (WER %, lower is better). Clean/meeting/TED/earnings-call test sets, NOT church audio.",
+    "datasets": [
+      "AMI",
+      "Giga-clean",
+      "LS-clean",
+      "LS-other",
+      "SPGI",
+      "VoxPopuli",
+      "Earnings22",
+      "TED-LIUM",
+      "EN-RealSI"
+    ],
+    "systems": {
+      "Qwen3-ASR (pseudo-streaming, 2 s, rewrites text)": [
+        9.25,
+        8.61,
+        1.67,
+        3.54,
+        2.9,
+        3.02,
+        6.68,
+        2.33,
+        6.54
+      ],
+      "AssemblyAI (pseudo-streaming)": [
+        12.0,
+        9.21,
+        1.89,
+        3.37,
+        2.14,
+        4.75,
+        7.47,
+        3.23,
+        9.73
+      ],
+      "R2T2 (true streaming, 160 ms)": [
+        11.37,
+        9.6,
+        2.13,
+        4.88,
+        3.0,
+        3.07,
+        9.36,
+        3.34,
+        8.4
+      ],
+      "Voxtral (true streaming, 160 ms)": [
+        15.94,
+        11.13,
+        2.49,
+        7.15,
+        3.06,
+        6.3,
+        11.66,
+        4.6,
+        14.75
+      ],
+      "X-ASR (true streaming, 160 ms)": [
+        14.41,
+        10.26,
+        3.86,
+        9.64,
+        5.14,
+        5.68,
+        15.95,
+        3.75,
+        8.97
+      ],
+      "Nemotron (true streaming, 160 ms)": [
+        18.11,
+        12.67,
+        3.71,
+        8.27,
+        3.93,
+        5.69,
+        17.22,
+        5.11,
+        10.69
+      ],
+      "WhisperRT (Whisper-based, 200 ms, rewrites text)": [
+        24.19,
+        13.81,
+        4.7,
+        9.86,
+        8.66,
+        8.28,
+        35.08,
+        6.67,
+        35.36
+      ]
+    }
+  },
+  "rhemaflow_tiny_en_wer_estimate_percent": [
+    9,
+    14
+  ],
+  "rhemaflow_tiny_en_wer_estimate_source": "docs/ACCURACY.md, an ESTIMATE, not measured on a pulpit",
+  "rhemaflow_measured_accuracy_percent": {
+    "_source": "MEASURED in the build sandbox: one clip (JFK, 11 s), Whisper tiny.en, AGC -> VAD -> Whisper. One speaker, steady synthetic noise / chord-bed music. Says nothing about 93%.",
+    "clean": 100.0,
+    "noise 20 dB": 95.5,
+    "noise 10 dB": 95.5,
+    "noise 5 dB": 95.5,
+    "music 20 dB": 100.0,
+    "music 10 dB": 100.0,
+    "music 5 dB": 100.0,
+    "quiet mic x0.1, old front end": 86.4,
+    "quiet mic x0.1, new front end": 100.0,
+    "very quiet x0.05, old front end": 50.0,
+    "very quiet x0.05, new front end": 95.5
+  },
+  "contenders": [
+    "R2T2 on its own",
+    "RhemaFlow today (Whisper tiny.en)",
+    "RhemaFlow + R2T2 (target)"
+  ],
+  "scorecard": [
+    {
+      "category": "Word accuracy, clean speech",
+      "weight": 3,
+      "scores": [
+        5,
+        3,
+        5
+      ],
+      "tags": [
+        "V",
+        "E",
+        "E"
+      ],
+      "why": "R2T2 publishes 93.9% average; tiny.en is a 39 M-parameter model, est. 86-91% (not measured on a pulpit)"
+    },
+    {
+      "category": "Words appear live, never rewritten",
+      "weight": 2,
+      "scores": [
+        5,
+        4,
+        5
+      ],
+      "tags": [
+        "V",
+        "M",
+        "E"
+      ],
+      "why": "R2T2 only appends (seen in the demo). Ours now shows permanent (solid) words only after two decodes agree; on 14 REAL recorded Whisper decodes committed words never changed. Cost: in noise one wrong word stayed ('And' for 'Ask'), reported honestly"
+    },
+    {
+      "category": "Delay after you speak",
+      "weight": 3,
+      "scores": [
+        5,
+        3,
+        3
+      ],
+      "tags": [
+        "V",
+        "E",
+        "E"
+      ],
+      "why": "R2T2 claims 200-600 ms on a GPU; on an M1 we estimate 0.5-1 s; Whisper path simulated at 0.35-0.9 s"
+    },
+    {
+      "category": "Background noise / music",
+      "weight": 2,
+      "scores": [
+        4,
+        3,
+        4
+      ],
+      "tags": [
+        "E",
+        "M",
+        "E"
+      ],
+      "why": "R2T2 publishes no noise number (demo page not opened); ours held 95-100% on one clip with synthetic noise/music; real music is harder"
+    },
+    {
+      "category": "Quiet or loud microphone",
+      "weight": 2,
+      "scores": [
+        3,
+        5,
+        5
+      ],
+      "tags": [
+        "E",
+        "M",
+        "E"
+      ],
+      "why": "our auto-volume took a very quiet mic from 50% to 95.5%"
+    },
+    {
+      "category": "Talking non-stop for 60 s",
+      "weight": 2,
+      "scores": [
+        5,
+        4,
+        5
+      ],
+      "tags": [
+        "V",
+        "M",
+        "E"
+      ],
+      "why": "ours cuts at breaths every ~12 s and loses nothing, but text arrives in pieces"
+    },
+    {
+      "category": "Accents",
+      "weight": 1,
+      "scores": [
+        4,
+        2,
+        4
+      ],
+      "tags": [
+        "E",
+        "E",
+        "E"
+      ],
+      "why": "nobody measured here; the bigger multilingual model is expected to cope better"
+    },
+    {
+      "category": "Knows scripture (KJV, 66 books)",
+      "weight": 3,
+      "scores": [
+        2,
+        5,
+        5
+      ],
+      "tags": [
+        "E",
+        "M",
+        "E"
+      ],
+      "why": "R2T2 only transcribes (book names can be hinted); RhemaFlow parses, fuzzy-matches books, snaps quotes, 83 tests"
+    },
+    {
+      "category": "Runs on an M1 MacBook",
+      "weight": 3,
+      "scores": [
+        1,
+        5,
+        2
+      ],
+      "tags": [
+        "V",
+        "E",
+        "E"
+      ],
+      "why": "R2T2 is ~2 B parameters and built for a CUDA GPU; our default is a 75 MB model"
+    },
+    {
+      "category": "Never freezes, recovers itself",
+      "weight": 2,
+      "scores": [
+        3,
+        4,
+        5
+      ],
+      "tags": [
+        "E",
+        "M",
+        "E"
+      ],
+      "why": "ours has watchdogs, reconnects, tests; with R2T2 the built-in Whisper now takes over if the stream is down or silent (failover logic unit-tested, not run on a Mac)"
+    },
+    {
+      "category": "Easy for a volunteer to install",
+      "weight": 1,
+      "scores": [
+        1,
+        4,
+        2
+      ],
+      "tags": [
+        "V",
+        "E",
+        "E"
+      ],
+      "why": "R2T2: Python + GPU; ours: one script (sidecar setup not yet run on a Mac)"
+    },
+    {
+      "category": "Offline and private",
+      "weight": 1,
+      "scores": [
+        4,
+        5,
+        5
+      ],
+      "tags": [
+        "E",
+        "M",
+        "E"
+      ],
+      "why": "all can run on the local machine"
+    },
+    {
+      "category": "Many languages",
+      "weight": 1,
+      "scores": [
+        5,
+        1,
+        5
+      ],
+      "tags": [
+        "V",
+        "M",
+        "E"
+      ],
+      "why": "R2T2 is multilingual (code-switching shown in the demo); tiny.en is English only"
+    }
+  ]
+}

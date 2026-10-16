@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "G1_clean_read": {"n": 20, "correct": 20, "pct": 100.0},
+    "G2_noise_garble": {"n": 12, "correct": 12, "pct": 100.0},
+    "G3_music_tags": {"n": 6, "correct": 5, "pct": 83.3},
+    "G4_short_distinctive": {"n": 6, "correct": 5, "pct": 83.3},
+    "G5_tail_fragments_silent": {"n": 6, "correct": 4, "pct": 66.7},
+    "G6_quote_overlap_lock": {"n": 5, "correct": 4, "pct": 80.0},
+    "G7_name_variants": {"n": 4, "correct": 3, "pct": 75.0},
+    "G8_gap_fill": {"n": 5, "repairs_not_worse": 5, "wer_before": 0.136, "wer_after": 0.136, "pct": 86.4},
+    "G9_chatter_silent": {"n": 10, "correct": 10, "pct": 100.0}
+  },
+  "listening_quality_composite": 87.7
+}

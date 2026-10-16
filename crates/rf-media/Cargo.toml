@@ -1,0 +1,17 @@
+[package]
+name = "rf-media"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Stage 2: opens pictures (PNG/JPEG/GIF/BMP) and H.264 MP4 video and plays video on its own clock. No UI, no sound."
+
+[dependencies]
+# Pictures. MIT/Apache-2.0. Only the four formats we promise.
+image = { version = "0.24", default-features = false, features = ["png", "jpeg", "gif", "bmp"] }
+# H.264 -> pictures. BSD-2-Clause (Cisco OpenH264 source, built by us; see docs/STAGE2-SPEC.md section 8 for the patent note).
+openh264 = { version = "0.5", default-features = false, features = ["source"] }
+# MP4 container reader. MIT.
+mp4 = "0.14"
+# Sets the text of an HTML page into pages (v0.840.0). MIT/Apache-2.0; already used by egui.
+ab_glyph = "0.2"
+rf-service = { path = "../rf-service" }

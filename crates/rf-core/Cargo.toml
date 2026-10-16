@@ -1,0 +1,10 @@
+[package]
+name = "rf-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+rf-bible = { path = "../rf-bible" }
+
+[dev-dependencies]
+serde_json = { workspace = true }

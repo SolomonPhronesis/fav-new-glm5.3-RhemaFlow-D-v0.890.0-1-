@@ -1,0 +1,8 @@
+RhemaFlow-D v0.890.0
+====================
+
+1. Open Terminal in this folder
+2. Run:  ./run.sh
+3. First run: accept the installs; macOS will ask once for microphone access -> OK
+
+Full test plan for your M1 + mic + tomorrow demo: see TESTING.md

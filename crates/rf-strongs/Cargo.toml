@@ -1,0 +1,10 @@
+[package]
+name = "rf-strongs"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Strong's numbers: Greek (and optional Hebrew) lexicon lookup, English word to original word, and a reader for Strong's-tagged Bibles. No UI."
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }

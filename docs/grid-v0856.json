@@ -1,0 +1,791 @@
+{
+  "elapsed_secs": 193.270275924,
+  "negatives_raw_windows": 93115,
+  "negatives_unique": 1698315,
+  "per_book_before": [
+    [
+      "Genesis",
+      57740
+    ],
+    [
+      "Exodus",
+      42661
+    ],
+    [
+      "Leviticus",
+      29980
+    ],
+    [
+      "Numbers",
+      38302
+    ],
+    [
+      "Deuteronomy",
+      37268
+    ],
+    [
+      "Joshua",
+      24872
+    ],
+    [
+      "Judges",
+      27523
+    ],
+    [
+      "Ruth",
+      4092
+    ],
+    [
+      "1 Samuel",
+      38506
+    ],
+    [
+      "2 Samuel",
+      29940
+    ],
+    [
+      "1 Kings",
+      31964
+    ],
+    [
+      "2 Kings",
+      27888
+    ],
+    [
+      "1 Chronicles",
+      26033
+    ],
+    [
+      "2 Chronicles",
+      32910
+    ],
+    [
+      "Ezra",
+      9889
+    ],
+    [
+      "Nehemiah",
+      14921
+    ],
+    [
+      "Esther",
+      8684
+    ],
+    [
+      "Job",
+      28014
+    ],
+    [
+      "Psalms",
+      60897
+    ],
+    [
+      "Proverbs",
+      22307
+    ],
+    [
+      "Ecclesiastes",
+      9120
+    ],
+    [
+      "Song of Solomon",
+      4144
+    ],
+    [
+      "Isaiah",
+      56076
+    ],
+    [
+      "Jeremiah",
+      57526
+    ],
+    [
+      "Lamentations",
+      5479
+    ],
+    [
+      "Ezekiel",
+      54025
+    ],
+    [
+      "Daniel",
+      17813
+    ],
+    [
+      "Hosea",
+      8144
+    ],
+    [
+      "Joel",
+      2997
+    ],
+    [
+      "Amos",
+      5885
+    ],
+    [
+      "Obadiah",
+      969
+    ],
+    [
+      "Jonah",
+      1982
+    ],
+    [
+      "Micah",
+      4763
+    ],
+    [
+      "Nahum",
+      2094
+    ],
+    [
+      "Habakkuk",
+      2368
+    ],
+    [
+      "Zephaniah",
+      2362
+    ],
+    [
+      "Haggai",
+      1408
+    ],
+    [
+      "Zechariah",
+      8974
+    ],
+    [
+      "Malachi",
+      2849
+    ],
+    [
+      "Matthew",
+      29973
+    ],
+    [
+      "Mark",
+      19253
+    ],
+    [
+      "Luke",
+      34935
+    ],
+    [
+      "John",
+      28975
+    ],
+    [
+      "Acts",
+      38410
+    ],
+    [
+      "Romans",
+      15002
+    ],
+    [
+      "1 Corinthians",
+      15161
+    ],
+    [
+      "2 Corinthians",
+      10007
+    ],
+    [
+      "Galatians",
+      4879
+    ],
+    [
+      "Ephesians",
+      4636
+    ],
+    [
+      "Philippians",
+      3534
+    ],
+    [
+      "Colossians",
+      3108
+    ],
+    [
+      "1 Thessalonians",
+      2865
+    ],
+    [
+      "2 Thessalonians",
+      1547
+    ],
+    [
+      "1 Timothy",
+      3639
+    ],
+    [
+      "2 Timothy",
+      2630
+    ],
+    [
+      "Titus",
+      1418
+    ],
+    [
+      "Philemon",
+      657
+    ],
+    [
+      "Hebrews",
+      10827
+    ],
+    [
+      "James",
+      3784
+    ],
+    [
+      "1 Peter",
+      4035
+    ],
+    [
+      "2 Peter",
+      2574
+    ],
+    [
+      "1 John",
+      3784
+    ],
+    [
+      "2 John",
+      458
+    ],
+    [
+      "3 John",
+      490
+    ],
+    [
+      "Jude",
+      1011
+    ],
+    [
+      "Revelation",
+      18054
+    ]
+  ],
+  "per_book_best": [
+    [
+      "Genesis",
+      4852
+    ],
+    [
+      "Exodus",
+      3157
+    ],
+    [
+      "Leviticus",
+      2023
+    ],
+    [
+      "Numbers",
+      3087
+    ],
+    [
+      "Deuteronomy",
+      2695
+    ],
+    [
+      "Joshua",
+      1882
+    ],
+    [
+      "Judges",
+      1868
+    ],
+    [
+      "Ruth",
+      278
+    ],
+    [
+      "1 Samuel",
+      2648
+    ],
+    [
+      "2 Samuel",
+      2090
+    ],
+    [
+      "1 Kings",
+      2269
+    ],
+    [
+      "2 Kings",
+      1799
+    ],
+    [
+      "1 Chronicles",
+      2735
+    ],
+    [
+      "2 Chronicles",
+      2301
+    ],
+    [
+      "Ezra",
+      773
+    ],
+    [
+      "Nehemiah",
+      1161
+    ],
+    [
+      "Esther",
+      532
+    ],
+    [
+      "Job",
+      3966
+    ],
+    [
+      "Psalms",
+      8417
+    ],
+    [
+      "Proverbs",
+      3356
+    ],
+    [
+      "Ecclesiastes",
+      821
+    ],
+    [
+      "Song of Solomon",
+      411
+    ],
+    [
+      "Isaiah",
+      4435
+    ],
+    [
+      "Jeremiah",
+      4059
+    ],
+    [
+      "Lamentations",
+      562
+    ],
+    [
+      "Ezekiel",
+      3526
+    ],
+    [
+      "Daniel",
+      1213
+    ],
+    [
+      "Hosea",
+      730
+    ],
+    [
+      "Joel",
+      231
+    ],
+    [
+      "Amos",
+      428
+    ],
+    [
+      "Obadiah",
+      63
+    ],
+    [
+      "Jonah",
+      156
+    ],
+    [
+      "Micah",
+      360
+    ],
+    [
+      "Nahum",
+      172
+    ],
+    [
+      "Habakkuk",
+      208
+    ],
+    [
+      "Zephaniah",
+      177
+    ],
+    [
+      "Haggai",
+      92
+    ],
+    [
+      "Zechariah",
+      597
+    ],
+    [
+      "Malachi",
+      182
+    ],
+    [
+      "Matthew",
+      3139
+    ],
+    [
+      "Mark",
+      1923
+    ],
+    [
+      "Luke",
+      3495
+    ],
+    [
+      "John",
+      3083
+    ],
+    [
+      "Acts",
+      3601
+    ],
+    [
+      "Romans",
+      1663
+    ],
+    [
+      "1 Corinthians",
+      1628
+    ],
+    [
+      "2 Corinthians",
+      963
+    ],
+    [
+      "Galatians",
+      555
+    ],
+    [
+      "Ephesians",
+      566
+    ],
+    [
+      "Philippians",
+      402
+    ],
+    [
+      "Colossians",
+      351
+    ],
+    [
+      "1 Thessalonians",
+      302
+    ],
+    [
+      "2 Thessalonians",
+      167
+    ],
+    [
+      "1 Timothy",
+      413
+    ],
+    [
+      "2 Timothy",
+      306
+    ],
+    [
+      "Titus",
+      172
+    ],
+    [
+      "Philemon",
+      87
+    ],
+    [
+      "Hebrews",
+      1122
+    ],
+    [
+      "James",
+      407
+    ],
+    [
+      "1 Peter",
+      386
+    ],
+    [
+      "2 Peter",
+      227
+    ],
+    [
+      "1 John",
+      374
+    ],
+    [
+      "2 John",
+      50
+    ],
+    [
+      "3 John",
+      54
+    ],
+    [
+      "Jude",
+      93
+    ],
+    [
+      "Revelation",
+      1384
+    ]
+  ],
+  "positives": 33189,
+  "prov_false_watch": [
+    [
+      "the counsel of the lord shall stand",
+      7,
+      false
+    ],
+    [
+      "many plans in a man's heart nevertheless the counsel of the lord",
+      12,
+      false
+    ]
+  ],
+  "rows": [
+    {
+      "a": 0,
+      "accuracy_score": 0.0,
+      "composite": 29.462171201301636,
+      "fp": 1109015,
+      "fp_per_1k": 653.0090118735335,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 13,
+      "shipped_before": true,
+      "tp_carded": 778,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31816,
+      "w": 3
+    },
+    {
+      "a": 75,
+      "accuracy_score": 1.9461413957430729,
+      "composite": 30.82447017832179,
+      "fp": 1087432,
+      "fp_per_1k": 640.3005331755298,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 11,
+      "shipped_before": false,
+      "tp_carded": 778,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31816,
+      "w": 3
+    },
+    {
+      "a": 80,
+      "accuracy_score": 6.252665653755818,
+      "composite": 33.83903715893071,
+      "fp": 1039672,
+      "fp_per_1k": 612.1785416721868,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 9,
+      "shipped_before": false,
+      "tp_carded": 778,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31816,
+      "w": 3
+    },
+    {
+      "a": 85,
+      "accuracy_score": 47.114421355887885,
+      "composite": 62.44226615042315,
+      "fp": 586509,
+      "fp_per_1k": 345.347594527517,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 5,
+      "shipped_before": false,
+      "tp_carded": 778,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31816,
+      "w": 3
+    },
+    {
+      "a": 90,
+      "accuracy_score": 90.46892963575786,
+      "composite": 92.79042194633213,
+      "fp": 105701,
+      "fp_per_1k": 62.238748406508805,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 0,
+      "prov_true_lost": 0,
+      "rank": 2,
+      "shipped_before": false,
+      "tp_carded": 778,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31816,
+      "w": 3
+    },
+    {
+      "a": 75,
+      "accuracy_score": 1.9461413957430729,
+      "composite": 30.82447017832179,
+      "fp": 1087432,
+      "fp_per_1k": 640.3005331755298,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 12,
+      "shipped_before": false,
+      "tp_carded": 816,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31778,
+      "w": 4
+    },
+    {
+      "a": 80,
+      "accuracy_score": 6.252665653755818,
+      "composite": 33.83903715893071,
+      "fp": 1039672,
+      "fp_per_1k": 612.1785416721868,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 10,
+      "shipped_before": false,
+      "tp_carded": 816,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31778,
+      "w": 4
+    },
+    {
+      "a": 85,
+      "accuracy_score": 47.114421355887885,
+      "composite": 62.44226615042315,
+      "fp": 586509,
+      "fp_per_1k": 345.347594527517,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 1,
+      "prov_true_lost": 0,
+      "rank": 6,
+      "shipped_before": false,
+      "tp_carded": 816,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31778,
+      "w": 4
+    },
+    {
+      "a": 90,
+      "accuracy_score": 90.46892963575786,
+      "composite": 92.79042194633213,
+      "fp": 105701,
+      "fp_per_1k": 62.238748406508805,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 0,
+      "prov_true_lost": 0,
+      "rank": 3,
+      "shipped_before": false,
+      "tp_carded": 816,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31778,
+      "w": 4
+    },
+    {
+      "a": 75,
+      "accuracy_score": 8.938652768447675,
+      "composite": 35.719228139215005,
+      "fp": 1009884,
+      "fp_per_1k": 594.6388037554871,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 0,
+      "prov_true_lost": 0,
+      "rank": 8,
+      "shipped_before": false,
+      "tp_carded": 830,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31764,
+      "w": 5
+    },
+    {
+      "a": 80,
+      "accuracy_score": 8.943612124272438,
+      "composite": 35.722699688292344,
+      "fp": 1009829,
+      "fp_per_1k": 594.6064187150205,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 0,
+      "prov_true_lost": 0,
+      "rank": 7,
+      "shipped_before": false,
+      "tp_carded": 830,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31764,
+      "w": 5
+    },
+    {
+      "a": 85,
+      "accuracy_score": 49.78498938247004,
+      "composite": 64.31166376903066,
+      "fp": 556892,
+      "fp_per_1k": 327.9085446457224,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 0,
+      "prov_true_lost": 0,
+      "rank": 4,
+      "shipped_before": false,
+      "tp_carded": 830,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31764,
+      "w": 5
+    },
+    {
+      "a": 90,
+      "accuracy_score": 91.23321145340685,
+      "composite": 93.32541921868642,
+      "fp": 97225,
+      "fp_per_1k": 57.247919261150024,
+      "identify_score": 98.20723733767213,
+      "prov_false_stage": 0,
+      "prov_true_lost": 0,
+      "rank": 1,
+      "shipped_before": false,
+      "tp_carded": 830,
+      "tp_misfire": 0,
+      "tp_missed": 595,
+      "tp_staged": 31764,
+      "w": 5
+    }
+  ],
+  "version": "0.856.0",
+  "winner": {
+    "a": 90,
+    "accuracy_score": 91.23321145340685,
+    "composite": 93.32541921868642,
+    "fp": 97225,
+    "fp_per_1k": 57.247919261150024,
+    "identify_score": 98.20723733767213,
+    "prov_false_stage": 0,
+    "prov_true_lost": 0,
+    "rank": 1,
+    "shipped_before": false,
+    "tp_carded": 830,
+    "tp_misfire": 0,
+    "tp_missed": 595,
+    "tp_staged": 31764,
+    "w": 5
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "five_cases": [
+    {
+      "case": "F1_self_corrected_reference",
+      "result": "2 Corinthians 5:17",
+      "said": "Second Chronicles No Second Corinthians chapter 5 verse 17."
+    },
+    {
+      "case": "F2_book_then_numbers",
+      "result": "Psalms 23:1",
+      "said": "We go to Psalms. + 23 verse 1."
+    },
+    {
+      "case": "F3_next_verse_command",
+      "result": "advanced (next verse ran)",
+      "said": "The evidence of things not seen. Next verse."
+    },
+    {
+      "case": "F4_quotation_autoshow",
+      "result": "Philippians 2:5|want:Philippians 2:5",
+      "said": "Let this mind be in you."
+    },
+    {
+      "case": "F4_quotation_autoshow",
+      "result": "Philippians 2:5|want:Philippians 2:5",
+      "said": "There is a mentality of Zion that is to don't have when the Bible says let this mind be in you."
+    },
+    {
+      "case": "F4_quotation_autoshow",
+      "result": "Philippians 2:5|want:Philippians 2:5",
+      "said": "Let this mind being you."
+    },
+    {
+      "case": "F4_quotation_autoshow",
+      "result": "John 3:16|want:John 3:16",
+      "said": "for God so"
+    },
+    {
+      "case": "F4_quotation_autoshow",
+      "result": "John 3:16|want:John 3:16",
+      "said": "for God so loved the world"
+    },
+    {
+      "case": "F4_quotation_autoshow",
+      "result": "Psalms 23:1|want:Psalms 23:1",
+      "said": "the Lord is my shepherd"
+    },
+    {
+      "case": "F5_repeat_three_times",
+      "result": "Philippians 2:5 | (nothing) | Philippians 2:5",
+      "said": "Let this mind being you. | That doesn't mind being you. | Let this mind be in you."
+    }
+  ],
+  "groups": {
+    "A_digits": {
+      "n": 31102,
+      "ok": 31102,
+      "pct": 100.0
+    },
+    "B_words": {
+      "n": 6128,
+      "ok": 6128,
+      "pct": 100.0
+    },
+    "C_ordinal_digits": {
+      "n": 6128,
+      "ok": 6128,
+      "pct": 100.0
+    },
+    "D_mixed_kw": {
+      "n": 4425,
+      "ok": 4425,
+      "pct": 100.0
+    },
+    "F1_self_corrected_reference": {
+      "n": 1,
+      "ok": 1,
+      "pct": 100.0
+    },
+    "F2_book_then_numbers": {
+      "n": 1,
+      "ok": 1,
+      "pct": 100.0
+    },
+    "F3_next_verse_command": {
+      "n": 1,
+      "ok": 1,
+      "pct": 100.0
+    },
+    "F4_quotation_autoshow": {
+      "n": 6,
+      "ok": 6,
+      "pct": 100.0
+    },
+    "F5_repeat_three_times": {
+      "n": 1,
+      "ok": 1,
+      "pct": 100.0
+    },
+    "chapter_only": {
+      "n": 1189,
+      "ok": 1189,
+      "pct": 100.0
+    },
+    "chatter_false_positive": {
+      "n": 20,
+      "ok": 20,
+      "pct": 100.0
+    },
+    "quote_3w": {
+      "n": 10,
+      "ok": 10,
+      "pct": 100.0
+    },
+    "quote_4w": {
+      "n": 10,
+      "ok": 10,
+      "pct": 100.0
+    },
+    "quote_6w": {
+      "n": 10,
+      "ok": 10,
+      "pct": 100.0
+    },
+    "quote_8w": {
+      "n": 10,
+      "ok": 10,
+      "pct": 100.0
+    },
+    "quote_asr_slip": {
+      "n": 10,
+      "ok": 10,
+      "pct": 100.0
+    },
+    "quote_long_lead_in": {
+      "n": 10,
+      "ok": 10,
+      "pct": 100.0
+    }
+  },
+  "parse_samples": 43358,
+  "parse_us_per_call": 1425.33,
+  "quote_us_per_call": 3793.4505,
+  "refcover_ms": 50520,
+  "sample_failures": []
+}

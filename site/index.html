@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RhemaFlow: the right Bible verse on the screen, while the preacher is still speaking</title>
+<meta name="description" content="RhemaFlow listens to a sermon, finds the Bible verse and puts it on your second screen for a person to approve. Mac app listens offline. Free web demo, no microphone needed.">
+<meta property="og:title" content="RhemaFlow: Scripture on screen, while the preacher speaks">
+<meta property="og:description" content="Detects spoken Bible verses, shows them for your team to approve, and puts them on screen 2. Try the free sample sermon.">
+<meta property="og:type" content="website"><meta property="og:image" content="https://rhemaflow2.pages.dev/og.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#14110d"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314110d'/%3E%3Ctext x='32' y='47' font-size='44' text-anchor='middle' fill='%23e0b25a' font-family='Georgia,serif'%3ER%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#14110d;--card:#1e1912;--ink:#f3ece0;--mute:#b3a794;--gold:#e0b25a;--line:#352d21;--ok:#8fcf9a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme=dark]){}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#faf6ee;--card:#fff;--ink:#241d12;--mute:#6b5f4c;--gold:#8a5a00;--line:#e5dcc8;--ok:#1d6b34}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Avenir Next",Segoe UI,system-ui,sans-serif}
+h1,h2,h3,.serif{font-family:Georgia,"Iowan Old Style","Palatino Linotype",serif;font-weight:600;line-height:1.15}
+a{color:var(--gold)}.wrap{max-width:1040px;margin:auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}nav b{font:600 22px Georgia,serif;color:var(--gold)}nav a{margin-left:18px;color:var(--mute);text-decoration:none;font-size:15px}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:40px 0 56px}
+h1{font-size:clamp(34px,5.4vw,58px);margin:0 0 16px}h1 em{color:var(--gold);font-style:italic}
+.lead{color:var(--mute);font-size:19px;max-width:34em}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 10px}
+.btn{display:inline-block;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid var(--gold);color:var(--gold)}
+.btn.main{background:var(--gold);color:#14110d}.small{font-size:14px;color:var(--mute)}
+.stage{background:#000;border:1px solid var(--line);border-radius:12px;aspect-ratio:16/10;display:grid;place-items:center;text-align:center;padding:22px;position:relative}
+.stage p{font:clamp(17px,2.4vw,24px)/1.45 Georgia,serif;color:#fff;margin:0 0 10px}.stage span{color:#e0b25a;font-size:15px;letter-spacing:.06em}
+.stage i{position:absolute;top:8px;right:12px;font-size:11px;color:#9a8f7c;font-style:normal}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin-top:10px}.rev{font-size:14px;color:var(--mute);margin-top:10px;border:1px dashed var(--line);border-radius:8px;padding:8px 12px}.rev b{color:var(--ok)}
+section{padding:46px 0;border-top:1px solid var(--line)}h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px}
+.n{font:700 30px Georgia,serif;color:var(--gold)}.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--mute);margin-bottom:6px}.tag.live{color:var(--ok);border-color:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mute);font-weight:600}.scroll{overflow-x:auto}
+details{border-bottom:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:700}details p{color:var(--mute);margin:8px 0 0}
+form{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}input{flex:1 1 240px;padding:13px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+footer{padding:30px 0 50px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media(max-width:800px){.hero{grid-template-columns:1fr}nav a.h{display:none}}
+</style></head><body><div class="wrap">
+<nav><b>RhemaFlow</b><div><a class="h" href="#how">How it works</a><a class="h" href="#price">Price</a><a class="h" href="#faq">Questions</a><a href="app/">Free demo</a></div></nav>
+<header class="hero"><div>
+<h1>The right verse on the screen, <em>while the preacher is still speaking.</em></h1>
+<p class="lead">RhemaFlow listens to the sermon, finds the Bible verse, and puts it in front of your media volunteer to approve in one tap. Then it shows it on screen 2. A person always stays in charge.</p>
+<div class="btns"><a class="btn main" href="app/">Try the sample sermon (free)</a><a class="btn" href="#join">Get the Mac app</a></div>
+<p class="small">The demo needs no sign-up and no microphone. Mac app: early access, see below.</p></div>
+<div><div class="stage" aria-label="Illustration of the stage screen"><i>illustration</i><div><p>“For God so loved the world, that he gave his only begotten Son…”</p><span>JOHN 3:16 · KJV</span></div></div>
+<div class="rev"><b>Needs review:</b> Romans 8:28 sounds like a quotation. Approve or dismiss. <i>(illustration)</i></div></div></header>
+
+<section id="how"><h2>Three steps. No production degree.</h2><div class="grid">
+<div class="card"><div class="n">1</div><h3>It listens</h3><p>Speech is turned into text as the preacher talks. In the Mac app this happens on your own computer, even with the Wi-Fi off.</p></div>
+<div class="card"><div class="n">2</div><h3>It finds the verse</h3><p>“Turn to John chapter 3” or a half-remembered quotation. Clear references go up; unsure ones wait for you.</p></div>
+<div class="card"><div class="n">3</div><h3>You approve, it shows</h3><p>One tap or a spoken “next verse”. Blackout and Clear are always one button away.</p></div></div></section>
+
+<section><h2>What works today, said plainly</h2>
+<div class="grid">
+<div class="card"><span class="tag live">works</span><h3>Verse detection + review</h3><p>References, garbled and paraphrased quotations, 350+ voice commands.</p></div>
+<div class="card"><span class="tag live">works</span><h3>Second screen</h3><p>Verses, slides, pictures, video and countdowns on screen 2.</p></div>
+<div class="card"><span class="tag live">works</span><h3>Transcripts &amp; notes</h3><p>Dated files: transcript, captions, sermon notes, recording.</p></div>
+<div class="card"><span class="tag">coming</span><h3>Phone remote over the internet, Windows app</h3><p>The phone remote already works on your church Wi-Fi.</p></div></div>
+<p class="small" style="margin-top:16px"><b>About “offline”:</b> the Mac app listens offline. This website's demo uses your browser's speech service, and Chrome sends that audio to Google. Use the sample sermon if you would rather send nothing.</p></section>
+
+<section id="price"><h2>Simple, honest pricing</h2>
+<p class="lead">Planned prices. We want 10 churches to tell us if they are fair before we fix them.</p>
+<div class="scroll"><table><tr><th>Plan</th><th>Price</th><th>For</th></tr>
+<tr><td><b>Free</b></td><td>£0</td><td>Public-domain Bibles, search, one screen, the web demo</td></tr>
+<tr><td><b>Standard</b></td><td>£10 / month</td><td>Voice detection, screen 2, transcripts, phone remote</td></tr>
+<tr><td><b>Pro</b></td><td>£20 / month</td><td>Media team: slides, video, OBS output, more computers</td></tr></table></div>
+<p class="small">Planned: 30-day free trial of Standard, no card, requires an internet connection to start. Bibles: KJV, ASV, YLT, Darby, Webster, Rotherham, AKJV and BBE are free. NIV, NKJV, ESV and others need their publishers' permission; we do not include them yet and will say so before we do.</p></section>
+
+<section id="join"><h2>Get early access to the Mac app</h2>
+<p>Leave your email and your church name. We will write when the installer and the 30-day trial are ready. No spam.</p>
+<form action="mailto:hello@YOUR-DOMAIN.com" method="post" enctype="text/plain"><input type="email" name="email" placeholder="you@church.org" required aria-label="Email"><button class="btn main" type="submit">Notify me</button></form>
+<p class="small">Which computer does your media team use, Mac or Windows? Tell us in the email; it decides what we build next.</p></section>
+
+<section id="faq"><h2>Questions</h2>
+<details><summary>Does it ever put a wrong verse up by itself?</summary><p>Clear references can go up automatically. Quotations and anything unsure wait for a person. The operator stays responsible for what is shown.</p></details>
+<details><summary>Does my sermon audio leave my computer?</summary><p>Mac app: no, it is processed locally. Web demo: your browser's speech service is used. Read the privacy page.</p></details>
+<details><summary>Does it work on Windows?</summary><p>Not yet. The web demo works in Chrome and Edge on any computer.</p></details>
+<details><summary>Do we still need a song licence?</summary><p>Yes. RhemaFlow ships no song words. UK churches need a CCLI licence for copyrighted songs.</p></details></section>
+<footer>© RhemaFlow · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · hello@YOUR-DOMAIN.com</footer></div></body></html>

@@ -1,0 +1,14 @@
+{"cond":"clean","decode_s":22.51934814453125,"secs":2.0,"step":0,"text":"And so my fellow American."}
+{"cond":"clean","decode_s":22.41708755493164,"secs":3.5,"step":1,"text":"And so my fellow Americans."}
+{"cond":"clean","decode_s":27.143260955810547,"secs":5.0,"step":2,"text":"And so my fellow Americans ask not."}
+{"cond":"clean","decode_s":31.57923126220703,"secs":6.5,"step":3,"text":"And so my fellow Americans ask not watch your country"}
+{"cond":"clean","decode_s":42.83233642578125,"secs":8.0,"step":4,"text":"And so my fellow Americans ask not what your country can do for you."}
+{"cond":"clean","decode_s":54.487335205078125,"secs":9.5,"step":5,"text":"And so my fellow Americans ask not what your country can do for you ask what you can do."}
+{"cond":"clean","decode_s":61.3919677734375,"secs":11.0,"step":6,"text":"And so my fellow Americans ask not what your country can do for you ask what you can do for your country."}
+{"cond":"noise10","decode_s":22.53347396850586,"secs":2.0,"step":0,"text":"And so my fellow American."}
+{"cond":"noise10","decode_s":22.30342674255371,"secs":3.5,"step":1,"text":"And so my fellow American."}
+{"cond":"noise10","decode_s":26.827594757080078,"secs":5.0,"step":2,"text":"And so my fellow American and not."}
+{"cond":"noise10","decode_s":33.69578552246094,"secs":6.5,"step":3,"text":"And so my fellow American. And not what your country"}
+{"cond":"noise10","decode_s":45.13188934326172,"secs":8.0,"step":4,"text":"And so my fellow American. And not what your country can do for you."}
+{"cond":"noise10","decode_s":58.868995666503906,"secs":9.5,"step":5,"text":"And so my fellow American. Ask not what your country can do for you. Ask what you can do."}
+{"cond":"noise10","decode_s":66.03587341308594,"secs":11.0,"step":6,"text":"And so my fellow American. Ask not what your country can do for you. Ask what you can do for your country."}
